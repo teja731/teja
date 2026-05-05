@@ -1,5 +1,5 @@
 node {
-    def IMAGE = "teja731/devops-app"
+    def IMAGE = "saiteja257/devops-app"
 
     stage('Build Docker Image') {
         sh "docker build -t ${IMAGE} ."
