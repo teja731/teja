@@ -1,7 +1,3 @@
-pipeline {
-agent any
-
-```
 environment {
     IMAGE = "teja731/devops-app"
 }
@@ -28,8 +24,5 @@ stages {
             }
         }
     }
-}
-```
-
 }
 
