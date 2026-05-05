@@ -16,9 +16,9 @@ pipeline {
         stage('Push to DockerHub') {
             steps {
                 withCredentials([usernamePassword(
-                    credentialsId: 'app-credential',
+                    credentialsId: 'dockerhub-creds',
                     usernameVariable: 'saiteja257',
-                    passwordVariable: 'saiteja1234'
+                    passwordVariable: dckr_pat_Fj6XqARQYDqsJRoqjztZm3c_PgQ''
                 )]) {
                     sh 'echo $PASS | docker login -u $USER --password-stdin'
                     sh 'docker push $IMAGE'
