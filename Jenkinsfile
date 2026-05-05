@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE = "yourdockerhub/devops-app"
+        IMAGE = "teja731/devops-app"
     }
 
     stages {
@@ -16,12 +16,14 @@ pipeline {
         stage('Push to DockerHub') {
             steps {
                 withCredentials([usernamePassword(
-                    credentialsId: 'dockerhub-creds',
+                    credentialsId: 'app-credential',
                     usernameVariable: 'saiteja257',
-                    passwordVariable: dckr_pat_Fj6XqARQYDqsJRoqjztZm3c_PgQ''
+                    passwordVariable: 'dckr_pat_Fj6XqARQYDqsJRoqjztZm3c_PgQ'
                 )]) {
-                    sh 'echo $PASS | docker login -u $USER --password-stdin'
-                    sh 'docker push $IMAGE'
+                    sh '''
+                    echo "$PASS" | docker login -u "$USER" --password-stdin
+                    docker push $IMAGE
+                    '''
                 }
             }
         }
