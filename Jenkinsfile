@@ -1,6 +1,3 @@
-node {
-
-```
 def IMAGE = "teja731/devops-app"
 
 stage('Build Docker Image') {
@@ -19,7 +16,3 @@ stage('Push to DockerHub') {
         """
     }
 }
-```
-
-}
-
