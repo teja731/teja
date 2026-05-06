@@ -1,4 +1,7 @@
 node {
+
+    checkout scm
+
     def IMAGE = "saiteja257/todo-app"
 
     stage('Debug Workspace') {
