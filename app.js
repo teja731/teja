@@ -34,7 +34,7 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/add', async (req, res) => {
-  aiwait Todo.create({
+  await Todo.create({
     task: 'Learn DevOps'
   });
 
